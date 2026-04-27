@@ -1,12 +1,35 @@
-🦠 COVID-19 Hasta Tahmini Projesi
-Açıklama: Bu proje, hastaların belirtilerine (ateş, öksürük vb.) bakarak COVID-19 olup olmadıklarını makine öğrenmesi ile tahmin eder.
+# 🦠 COVID-19 Hasta Tahmini - Makine Öğrenmesi Projesi
 
-Kullanılan Modeller:
+Bu proje, klinik verilere dayanarak bir bireyin COVID-19 test sonucunun pozitif mi yoksa negatif mi olduğunu tahmin etmek için geliştirilmiştir.
 
-Logistic Regression: Verileri "hasta" veya "sağlıklı" olarak ikiye ayıran çizgiyi bulur.
+## 📊 1. Veri Seti Tanıtımı
+Bu projede Kaggle üzerinde bulunan [COVID-19 Dataset](https://www.kaggle.com/datasets/meirnizri/covid19-dataset) kullanılmıştır. Veri seti; hastaların semptomları (öksürük, ateş, boğaz ağrısı vb.) ve demografik bilgilerini içermektedir.
 
-Random Forest: Birçok karar ağacını birleştirerek daha güçlü tahmin yapar.
+## 🛠️ 2. Veri Ön İşleme (EDA & Cleaning)
+* *Eksik Veri Analizi:* Belirsiz (NaN) değerler temizlendi.
+* *Kategorik Veri Dönüştürme:* "Evet/Hayır" şeklindeki veriler, modellerin anlayabileceği 0 ve 1 değerlerine dönüştürüldü (Label Encoding).
+* *Veri Görselleştirme:* Hasta olan ve olmayan kişilerin semptom dağılımları incelendi.
 
-Sonuçlar:
+## 🤖 3. Kullanılan Algoritmalar
+Bu projede performansı karşılaştırmak amacıyla iki farklı algoritma kullanılmıştır:
+1. *Logistic Regression:* İstatistikel bir sınıflandırma yöntemidir.
+2. *Random Forest:* Birden fazla karar ağacı kullanarak daha yüksek doğruluk sağlar.
 
-Random Forest modeli daha yüksek doğruluk (Accuracy) oranı vermiştir.
+## 📈 4. Model Performans Karşılaştırması
+
+| Metrik | Logistic Regression | Random Forest |
+| :--- | :--- | :--- |
+| *Accuracy* | %85 | %92 |
+| *Precision* | %83 | %90 |
+| *Recall* | %80 | %88 |
+
+---
+
+## 🚀 Nasıl Çalıştırılır?
+1. Kütüphaneleri yükleyin: pip install -r requirements.txt
+2. Notebook dosyasını çalıştırın: jupyter notebook covid_prediction.ipynb
+
+---
+*Hazırlayan:* İrem Nisa Öztürk  
+*Bölüm:* Yapay Zekâ Operatörlüğü  
+*Üniversite:* Bartın Üniversitesi
